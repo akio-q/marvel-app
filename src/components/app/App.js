@@ -1,11 +1,11 @@
-
+import AppHeader from "../appHeader/AppHeader";
 
 function App() {
-  return (
-    <div className="App">
-      
-    </div>
-  );
+   return (
+        <div className="app">
+            <AppHeader />
+        </div>
+    );
 }
 
 export default App;
