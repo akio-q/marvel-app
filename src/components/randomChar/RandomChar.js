@@ -30,7 +30,17 @@ class RandomChar extends Component {
     }
 
     render() {
-        const {char: {name, description, thumbnail, homepage, wiki}} = this.state;
+        const {char: {name, thumbnail, homepage, wiki}} = this.state;
+        let {char: {description}} = this.state;
+
+        if (!description) {
+            description = 'No aviable data';
+        }
+        if (description.length > 210) {
+            const visibleDescr = description.substring(0, 210);
+            description = visibleDescr + '...';
+        }
+       
 
         return (
             <div className="randomchar">
