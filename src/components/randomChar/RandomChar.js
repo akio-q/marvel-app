@@ -7,19 +7,17 @@ import './randomChar.scss';
 import mjolnir from '../../resources/img/mjolnir.png';
 
 class RandomChar extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            char: {},
-            loading: true,
-            error: false
-        }    
-
-        this.updateChar();
-    }
+    state = {
+        char: {},
+        loading: true,
+        error: false
+    }  
 
     marvelService = new MarvelService();
+
+    componentDidMount() {
+        this.updateChar();
+    }
 
     onCharLoaded = (char) => {
         this.setState({
