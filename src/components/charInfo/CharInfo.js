@@ -99,7 +99,7 @@ const View = ({char}) => {
                 </div>
             </div>
             <div className="char__descr">
-                {description}
+                {description ? description : 'There is no description for this character'}
             </div>
             <div className="char__comics">Comics:</div>
             <ul className="char__comics-list">
