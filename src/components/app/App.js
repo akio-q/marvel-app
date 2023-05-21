@@ -14,7 +14,6 @@ const App = () => {
         setSelectedChar(id);
     }
 
-
     return (
         <div className="app">
             <AppHeader />
