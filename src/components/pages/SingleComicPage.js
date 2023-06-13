@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 
 import useMarvelService from '../../services/MarvelService';
 import Spinner from '../spinner/Spinner';
-import ErrorMessage from '../errorMessage/ErrorMessage';
+import Page404 from './404';
 
 import './singleComicPage.scss';
 
@@ -27,13 +27,13 @@ const SingleComicPage = () => {
         setComic(comic);
     }
 
-    const errorMessage = error ? <ErrorMessage /> : null;
+    const errorPage = error ? <Page404 /> : null;
     const spinner = loading ? <Spinner /> : null;
     const content = !(loading || error || !comic) ? <View comic={comic} /> : null;
 
     return (
         <>
-            {errorMessage}
+            {errorPage}
             {spinner}
             {content}
         </>
