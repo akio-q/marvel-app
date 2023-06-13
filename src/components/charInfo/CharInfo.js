@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import Spinner from '../spinner/Spinner';
 import ErrorMessage from '../errorMessage/ErrorMessage';
@@ -76,9 +77,10 @@ const View = ({char}) => {
                 {comics.length > 0 ? null : 'There is no comics with this character'}
                 {
                     comics.slice(0, 10).map((item, i) => {
+                        const comicPath = `/comics/${item.resourceURI.match(/\d/g).join('')}`;
                         return (
                             <li className="char__comics-item" key={i}>
-                                {item.name}
+                                <Link to={comicPath}>{item.name}</Link>
                             </li>
                         )
                     })
