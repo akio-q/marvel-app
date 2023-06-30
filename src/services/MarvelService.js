@@ -37,7 +37,7 @@ const useMarvelService = () => {
             id: char.id,
             name: char.name,
             description: char.description
-                        ? `${char.description.slice(0, 210)}...`
+                        ? char.description
                         : 'There is no description for this character',
             thumbnail: char.thumbnail.path + '.' + char.thumbnail.extension,
             homepage: char.urls[0].url,

@@ -55,8 +55,17 @@ const RandomChar = () => {
 }
 
 const View = ({char}) => {
-    const {name, thumbnail, homepage, wiki, description} = char; 
+    const {name, thumbnail, homepage, wiki} = char; 
+    let {description} = char;
     const imgObjectFit = thumbnail === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg' ? {objectFit: 'contain'} : null;
+
+    if (!description) {
+        description = 'There is no description for this character';
+    }
+    if (description.length > 210) {
+        const visibleDescr = description.substring(0, 210);
+        description = visibleDescr + '...';
+    }
 
     return (
         <div className="randomchar__block">
