@@ -1,5 +1,3 @@
-import AppBanner from '../../appBanner/AppBanner';
-
 import './singleCharacterLayout.scss';
 
 const SingleCharacterLayout = ({data}) => {
@@ -7,7 +5,6 @@ const SingleCharacterLayout = ({data}) => {
 
     return (
         <>
-            <AppBanner />
             <div className="single-character">
                 <img src={thumbnail} alt='Loki' className="single-character__img" />
                 <div>

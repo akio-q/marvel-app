@@ -2,8 +2,10 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 import useMarvelService from '../../services/MarvelService';
+import AppBanner from '../appBanner/AppBanner';
 import Spinner from '../spinner/Spinner';
 import Page404 from './404';
+import App from '../app/App';
 
 const SinglePage = ({Component, dataType}) => {
     const {id} = useParams();
@@ -36,6 +38,7 @@ const SinglePage = ({Component, dataType}) => {
 
     return (
         <>
+            <AppBanner />
             {errorPage}
             {spinner}
             {content}
