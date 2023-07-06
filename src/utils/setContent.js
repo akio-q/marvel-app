@@ -6,7 +6,7 @@ const setContent = (process, Component, data) => {
     switch (process) {
         case 'waiting':
             return <Skeleton />;
-            break; // на всякий випадок
+            break; 
         case 'loading':
             return <Spinner />;
             break;
