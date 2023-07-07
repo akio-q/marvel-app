@@ -76,7 +76,13 @@ const CharList = (props) => {
                         onClick={() => {
                             props.onCharSelected(item.id)
                             focusOnItem(i)
-                        }} >
+                        }}
+                        onKeyPress={(e) => {
+                            if (e.key === ' ' || e.key === "Enter") {
+                                props.onCharSelected(item.id);
+                                focusOnItem(i);
+                            }
+                        }}>
                         <img src={item.thumbnail} alt={item.name} style={imgObjectFit} />
                         <div className="char__name">{item.name}</div>
                     </li> 
